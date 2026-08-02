@@ -1,27 +1,31 @@
-export type ContentType = "movie" | "series" | "special";
+export type TitleType = "movie" | "series" | "special";
 
-export type Saga =
-  | "Infinity Saga"
-  | "Multiverse Saga";
+export type TabFilter =
+  | "all"
+  | "movies"
+  | "series"
+  | "specials";
 
-export interface Movie {
+export type NavTab =
+  | "timeline"
+  | "progress"
+  | "favorites"
+  | "profile";
+
+export interface MCUTitle {
   id: number;
 
   title: string;
 
   year: number;
 
-  type: ContentType;
+  type: TitleType;
 
-  phase: number;
-
-  saga: Saga;
-
-  timelineOrder: number;
-
-  poster: string;
+  gradient: [string, string];
 
   watched: boolean;
 
-  favorite: boolean;
+  favorite?: boolean;
+
+  phase: number;
 }
