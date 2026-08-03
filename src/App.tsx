@@ -29,12 +29,24 @@ export default function App() {
   const [titles, setTitles] = useState<MCUTitle[]>(() => {
   const saved = localStorage.getItem("mcu-tracker");
 
-  if (saved) {
-    return JSON.parse(saved) as MCUTitle[];
+  if (!saved) {
+    return MCU_DATA;
   }
 
-  return MCU_DATA;
+  const savedTitles: MCUTitle[] = JSON.parse(saved);
+
+  return MCU_DATA.map((movie) => {
+    const old = savedTitles.find((m) => m.id === movie.id);
+
+    return old
+      ? {
+          ...movie,              // ใช้ข้อมูลล่าสุดจาก MCU_DATA
+          watched: old.watched,  // แต่เก็บสถานะ watched เดิม
+        }
+      : movie;
+  });
 });
+
   const [activeFilter, setActiveFilter] = useState<TabFilter>('all')
   const [activeNav, setActiveNav] = useState<NavTab>('timeline')
   const [searchOpen, setSearchOpen] = useState(false)

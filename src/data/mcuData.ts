@@ -9,4 +9,5 @@ export const MCU_DATA: MCUTitle[] = [
   { id: 6, tmdbId:10195, title: 'Thor', year: 2011, type: 'movie', gradient: ['#1e3a8a', '#eab308'], watched: true, phase: 1 },
   { id: 7, tmdbId:24428, title: 'The Avengers', year: 2012, type: 'movie', gradient: ['#1a1a2e', '#16213e'], watched: true, phase: 1 },
   { id: 24, tmdbId:85271, title: 'WandaVision', year: 2021, type: 'series', gradient: ['#4a044e', '#881337'], watched: true, phase: 4 },
+  { id: 25, tmdbId:88396, title: 'The Falcon and the Winter Soldier', year: 2021, type: 'series', gradient: ['#0f172a', '#7f1d1d'], watched: true, phase: 4 },
 ]
