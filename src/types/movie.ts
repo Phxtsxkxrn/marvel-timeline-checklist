@@ -30,4 +30,6 @@ export interface MCUTitle {
   phase: number;
 
   poster?: string
+
+  tmdbId: number
 }

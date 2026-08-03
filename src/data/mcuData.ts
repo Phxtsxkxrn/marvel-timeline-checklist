@@ -1,7 +1,7 @@
 import type { MCUTitle } from "../types/movie";
 
 export const MCU_DATA: MCUTitle[] = [
-  { id: 1, title: 'Captain America: The First Avenger', year: 2011, type: 'movie', gradient: ['#1a3a5c', '#0c1e36'], watched: true, phase: 1 },
+  { id: 1, tmdbId:1771, title: 'Captain America: The First Avenger', year: 2011, type: 'movie', gradient: ['#1a3a5c', '#0c1e36'], watched: true, phase: 1 },
   { id: 2, title: 'Agent Carter', year: 2015, type: 'series', gradient: ['#8b1a1a', '#3d0b0b'], watched: true, phase: 1 },
   { id: 3, title: 'Captain Marvel', year: 2019, type: 'movie', gradient: ['#1e3a6e', '#6b21a8'], watched: true, phase: 1 },
   { id: 4, title: 'Iron Man', year: 2008, type: 'movie', gradient: ['#7c1d1d', '#c2410c'], watched: true, phase: 1 },
