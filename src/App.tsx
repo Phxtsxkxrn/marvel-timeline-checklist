@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useEffect, useMemo, useRef, useState } from "react";
 import type {
   MCUTitle,
   NavTab,
@@ -25,7 +25,15 @@ const TOTAL = MCU_DATA.length
 const WATCHED_COUNT = MCU_DATA.filter(t => t.watched).length
 
 export default function App() {
-  const [titles, setTitles] = useState<MCUTitle[]>(MCU_DATA)
+  const [titles, setTitles] = useState<MCUTitle[]>(() => {
+  const saved = localStorage.getItem("mcu-tracker");
+
+  if (saved) {
+    return JSON.parse(saved) as MCUTitle[];
+  }
+
+  return MCU_DATA;
+});
   const [activeFilter, setActiveFilter] = useState<TabFilter>('all')
   const [activeNav, setActiveNav] = useState<NavTab>('timeline')
   const [searchOpen, setSearchOpen] = useState(false)
@@ -42,6 +50,13 @@ export default function App() {
   useEffect(() => {
     if (searchOpen && searchRef.current) searchRef.current.focus()
   }, [searchOpen])
+
+  useEffect(() => {
+  localStorage.setItem(
+    "mcu-tracker",
+    JSON.stringify(titles)
+  );
+}, [titles]);
 
   const filteredTitles = titles.filter(t => {
     const matchesFilter =
