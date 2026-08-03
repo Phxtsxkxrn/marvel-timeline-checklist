@@ -17,21 +17,10 @@ export default function PosterCard({
 useEffect(() => {
   if (!title.tmdbId) return;
 
-  getPoster(title.tmdbId)
+  getPoster(title.tmdbId, title.type)
     .then(setPoster)
     .catch(console.error);
-}, [title.tmdbId]);
-
-useEffect(() => {
-  console.log("tmdbId =", title.tmdbId);
-
-  if (!title.tmdbId) return;
-
-  getPoster(title.tmdbId).then((url) => {
-    console.log(url);
-    setPoster(url);
-  });
-}, [title.tmdbId]);
+}, [title.tmdbId, title.type]);
 
   return (
     <div

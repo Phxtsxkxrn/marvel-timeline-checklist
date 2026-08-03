@@ -8,4 +8,5 @@ export const MCU_DATA: MCUTitle[] = [
   { id: 5, tmdbId:1724, title: 'The Incredible Hulk', year: 2008, type: 'movie', gradient: ['#14532d', '#15803d'], watched: true, phase: 1 },
   { id: 6, tmdbId:10195, title: 'Thor', year: 2011, type: 'movie', gradient: ['#1e3a8a', '#eab308'], watched: true, phase: 1 },
   { id: 7, tmdbId:24428, title: 'The Avengers', year: 2012, type: 'movie', gradient: ['#1a1a2e', '#16213e'], watched: true, phase: 1 },
+  { id: 24, tmdbId:85271, title: 'WandaVision', year: 2021, type: 'series', gradient: ['#4a044e', '#881337'], watched: true, phase: 4 },
 ]
