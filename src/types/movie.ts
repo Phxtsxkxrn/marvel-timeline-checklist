@@ -28,4 +28,6 @@ export interface MCUTitle {
   favorite?: boolean;
 
   phase: number;
+
+  poster?: string
 }

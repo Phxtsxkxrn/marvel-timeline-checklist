@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
+import { getMovie } from "./services/tmdb";
 import type {
   MCUTitle,
   NavTab,
